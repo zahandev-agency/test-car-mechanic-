@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare Pro - Your Trusted Car Mechanic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo-example.png" alt="AutoCare Pro Logo" class="logo">
+                <span class="brand-name">AutoCare Pro</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <span class="phone-number">
+                    <i class="fas fa-phone"></i>
+                    (555) 123-4567
+                </span>
+                <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="images/hero-bg.jpg" alt="Modern Car Repair Shop" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Trusted Partner for Auto Care</h1>
+                <p class="hero-subtitle">Expert Car Repair and Maintenance Services for a Smooth Ride</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" onclick="openBookingModal()">Book Now</button>
+                    <button class="btn btn-secondary btn-large">Get a Free Quote</button>
+                    <button class="btn btn-outline btn-large">
+                        <i class="fas fa-phone"></i>
+                        Call Us Today
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-target="5000">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat-item" data-target="15">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item" data-target="50">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Expert Technicians</span>
+                </div>
+                <div class="stat-item" data-target="100">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Services Offered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Dedicated to Your Vehicle's Health</h2>
+                    <p class="about-description">
+                        We are a team of certified and experienced mechanics committed to providing top-notch car repair and maintenance services. With years of expertise and a passion for automobiles, we ensure your vehicle receives the best care possible.
+                    </p>
+                    <p class="about-description">
+                        Our mission is to deliver reliable, efficient, and transparent services, building lasting trust with our local community. Every repair is backed by our commitment to quality and customer satisfaction.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certified Technicians</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>15+ Years Experience</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Warranty Guaranteed</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-tools"></i>
+                            <span>Latest Equipment</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Learn More About Us</button>
+                </div>
+                <div class="about-image">
+                    <img src="images/mechanic-working.jpg" alt="Professional Mechanic Working" class="mechanic-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive Auto Services You Can Rely On</h2>
+                <p class="section-subtitle">We offer a wide range of services to keep your car running safely and smoothly. Each service is performed with precision and attention to detail.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="selectService('Engine Diagnostics')">
+                    <div class="service-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="service-title">Engine Diagnostics & Repair</h3>
+                    <p class="service-description">Advanced diagnostics to accurately identify and fix engine issues, ensuring optimal performance.</p>
+                </div>
+                <div class="service-card" onclick="selectService('Brake Services')">
+                    <div class="service-icon">
+                        <i class="fas fa-circle-notch"></i>
+                    </div>
+                    <h3 class="service-title">Brake Services</h3>
+                    <p class="service-description">From inspections to replacements, we ensure your braking system is responsive and safe.</p>
+                </div>
+                <div class="service-card" onclick="selectService('Oil Change')">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="service-title">Oil Change & Fluid Services</h3>
+                    <p class="service-description">Regular oil changes and fluid checks to extend your engine's life and maintain efficiency.</p>
+                </div>
+                <div class="service-card" onclick="selectService('Tire Services')">
+                    <div class="service-icon">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <h3 class="service-title">Tire Services</h3>
+                    <p class="service-description">Tire rotation, balancing, and replacement services for better handling and longevity.</p>
+                </div>
+                <div class="service-card" onclick="selectService('AC Repair')">
+                    <div class="service-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3 class="service-title">AC & Heating Repair</h3>
+                    <p class="service-description">Keep your cabin comfortable year-round with our expert AC and heating system repairs.</p>
+                </div>
+                <div class="service-card" onclick="selectService('Maintenance')">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="service-title">Preventative Maintenance</h3>
+                    <p class="service-description">Scheduled maintenance to prevent major breakdowns and save you money in the long run.</p>
+                </div>
+            </div>
+            <div class="services-cta">
+                <button class="btn btn-primary btn-large" onclick="openBookingModal()">Book Your Service</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Work Gallery</h2>
+                <p class="section-subtitle">Take a look at our state-of-the-art facility and the quality work we deliver</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/clean-workshop.jpg" alt="Clean Workshop" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Modern Workshop</h3>
+                        <p>State-of-the-art equipment and clean facilities</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/mechanic-working.jpg" alt="Mechanic Working" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Expert Technicians</h3>
+                        <p>Certified professionals at work</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hero-bg.jpg" alt="Car Repair" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Quality Service</h3>
+                        <p>Attention to detail in every repair</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/clean-workshop.jpg" alt="Diagnostic Equipment" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Advanced Diagnostics</h3>
+                        <p>Latest diagnostic equipment for accurate repairs</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/mechanic-working.jpg" alt="Engine Work" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Engine Repairs</h3>
+                        <p>Specialized engine diagnostic and repair</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hero-bg.jpg" alt="Customer Service" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3>Customer Focus</h3>
+                        <p>Dedicated to customer satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Expert Team</h2>
+                <p class="section-subtitle">Our certified technicians are the backbone of our success</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/mechanic-working.jpg" alt="John Smith" class="member-photo">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>John Smith</h3>
+                        <span class="member-role">Master Technician</span>
+                        <p>15+ years of experience in automotive diagnostics and repair. ASE certified with expertise in engine and transmission systems.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/clean-workshop.jpg" alt="Sarah Johnson" class="member-photo">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <span class="member-role">Service Manager</span>
+                        <p>Expert in customer service and automotive systems. Ensures every customer receives personalized attention and quality service.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/mechanic-working.jpg" alt="Mike Davis" class="member-photo">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Mike Davis</h3>
+                        <span class="member-role">Brake Specialist</span>
+                        <p>Specialized in brake systems and safety inspections. Certified in advanced brake technology and ABS systems.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/clean-workshop.jpg" alt="Lisa Chen" class="member-photo">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Lisa Chen</h3>
+                        <span class="member-role">Electrical Specialist</span>
+                        <p>Expert in automotive electrical systems and computer diagnostics. Specialized in hybrid and electric vehicle technology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Don't just take our word for it - hear from our satisfied customers</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Excellent service! The team at AutoCare Pro diagnosed my engine problem quickly and fixed it at a fair price. They explained everything clearly and I felt completely confident in their work."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <span class="author-name">Sarah Mitchell</span>
+                            <span class="author-location">Local Customer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I've been bringing my car here for years and they never disappoint. Professional, honest, and always deliver on time. The shop is clean and the staff is friendly and knowledgeable."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <span class="author-name">Mike Johnson</span>
+                            <span class="author-location">Loyal Customer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Fast, reliable, and affordable! They fixed my transmission issue in just one day. The quality of work is outstanding and they stand behind their service with a warranty."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DL</div>
+                        <div class="author-info">
+                            <span class="author-name">David Lee</span>
+                            <span class="author-location">Satisfied Customer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Get In Touch</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">Ready to give your vehicle the care it deserves? Contact us today!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="quote">Request Quote</option>
+                                <option value="appointment">Book Appointment</option>
+                                <option value="service">Service Inquiry</option>
+                                <option value="general">General Question</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your vehicle and service needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span class="btn-text">Send Message</span>
+                            <span class="loading" style="display: none;"></span>
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address</strong>
+                                <p>123 Auto Care Drive<br>Mechanic City, MC 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Hours</strong>
+                                <p>Mon-Fri: 8AM-6PM<br>Sat: 9AM-4PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <h3><i class="fas fa-phone"></i> Contact Info</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>info@autocarepro.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency Service</h4>
+                        <p>Available 24/7 for roadside assistance</p>
+                        <button class="btn btn-primary" onclick="callEmergency()">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maps Section -->
+    <section id="maps" class="maps">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Find Us</h2>
+                <p class="section-subtitle">Visit our state-of-the-art facility for all your automotive needs</p>
+            </div>
+            <div class="maps-content">
+                <div class="map-container">
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="map-overlay">
+                        <div class="map-info">
+                            <h3><i class="fas fa-map-marker-alt"></i> AutoCare Pro</h3>
+                            <p><strong>Address:</strong> 123 Auto Care Drive, Mechanic City, MC 12345</p>
+                            <p><strong>Phone:</strong> (555) 123-4567</p>
+                            <p><strong>Hours:</strong> Mon-Fri: 8AM-6PM | Sat: 9AM-4PM</p>
+                            <div class="map-actions">
+                                <button class="btn btn-primary" onclick="getDirections()">
+                                    <i class="fas fa-directions"></i>
+                                    Get Directions
+                                </button>
+                                <button class="btn btn-outline" onclick="callUs()">
+                                    <i class="fas fa-phone"></i>
+                                    Call Us
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-details">
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="location-info">
+                            <h4>Easy Access</h4>
+                            <p>Located just off the main highway with plenty of parking available for customers.</p>
+                        </div>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="location-info">
+                            <h4>Public Transport</h4>
+                            <p>Bus routes 15, 23, and 45 stop within walking distance of our facility.</p>
+                        </div>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                        <div class="location-info">
+                            <h4>Accessibility</h4>
+                            <p>Our facility is fully accessible with ramps and designated parking spaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo-example.png" alt="AutoCare Pro Logo" class="footer-logo">
+                    <span class="footer-brand-name">AutoCare Pro</span>
+                    <p class="footer-description">Your trusted partner for all automotive needs. We provide expert car repair and maintenance services with a commitment to quality and customer satisfaction.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Engine Repair</a></li>
+                        <li><a href="#">Brake Services</a></li>
+                        <li><a href="#">Oil Changes</a></li>
+                        <li><a href="#">Tire Services</a></li>
+                        <li><a href="#">AC Repair</a></li>
+                        <li><a href="#">Diagnostics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Auto Care Drive, Mechanic City, MC 12345</p>
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@autocarepro.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoCare Pro. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Emergency Button -->
+    <div class="floating-emergency" onclick="callEmergency()" title="Emergency Service">
+        <i class="fas fa-exclamation-triangle"></i>
+    </div>
+
+    <!-- Service Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content booking-modal">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book Your Service</h2>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="bookingName">Full Name</label>
+                    <input type="text" id="bookingName" name="bookingName" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingEmail">Email</label>
+                    <input type="email" id="bookingEmail" name="bookingEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingPhone">Phone</label>
+                    <input type="tel" id="bookingPhone" name="bookingPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Select Service</label>
+                    <div class="service-selection">
+                        <div class="service-option" data-service="Engine Diagnostics">Engine Diagnostics</div>
+                        <div class="service-option" data-service="Brake Services">Brake Services</div>
+                        <div class="service-option" data-service="Oil Change">Oil Change</div>
+                        <div class="service-option" data-service="Tire Services">Tire Services</div>
+                        <div class="service-option" data-service="AC Repair">AC Repair</div>
+                        <div class="service-option" data-service="Maintenance">Maintenance</div>
+                    </div>
+                    <input type="hidden" id="selectedService" name="selectedService" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingDate">Preferred Date</label>
+                    <input type="date" id="bookingDate" name="bookingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingTime">Preferred Time</label>
+                    <select id="bookingTime" name="bookingTime" required>
+                        <option value="">Select time</option>
+                        <option value="morning">Morning (8AM-12PM)</option>
+                        <option value="afternoon">Afternoon (12PM-4PM)</option>
+                        <option value="evening">Evening (4PM-6PM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vehicleInfo">Vehicle Information</label>
+                    <textarea id="vehicleInfo" name="vehicleInfo" rows="3" placeholder="Make, model, year, and any specific issues..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">
+                    <span class="btn-text">Book Appointment</span>
+                    <span class="loading" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
